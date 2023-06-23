@@ -1,0 +1,28 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  height: 96vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(16, 30px);
+  grid-template-rows: repeat(16, 30px);
+  place-content: center;
+}
+
+.grid {
+  border: 0.5px solid #000;
+  transition-duration: 0.4s;
+}
+
+.grid:focus {
+  background-color: #3478c6;
+}
+
+.cell {
+  background-color: #3478c6;
+}
