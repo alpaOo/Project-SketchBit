@@ -1,8 +1,14 @@
 const mainContainer = document.querySelector('.container');
-let isDragging = false;
+let gridValue = 0;
+userInput(+prompt(`enter a number: `)); //get user input using propmt then, run function userInput()
 
-for (let i = 0; i < 16; i++) {
-  for (let j = 0; j < 16; j++) {
+let isDragging = false; //determines whether mouse(any button) is clicked
+
+mainContainer.style.gridTemplateColumns = `repeat(${gridValue}, calc(512px / ${gridValue}))`; // set grid parameters using user input
+mainContainer.style.gridTemplateRows = `repeat(${gridValue}, calc(512px / ${gridValue}))`; // set grid parameters using user input
+
+for (let i = 0; i < gridValue; i++) {
+  for (let j = 0; j < gridValue; j++) {
     const cell = document.createElement('div');
     cell.classList.add('grid');
     mainContainer.append(cell);
@@ -21,4 +27,10 @@ for (let i = 0; i < 16; i++) {
       isDragging = false;
     });
   }
+}
+
+function userInput(value) {
+  if (value > 64) return alert('STOP');
+
+  gridValue = value;
 }
