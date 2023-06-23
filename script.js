@@ -6,19 +6,19 @@ for (let i = 0; i < 16; i++) {
     const cell = document.createElement('div');
     cell.classList.add('grid');
     mainContainer.append(cell);
-  }
-  cell.addEventListener('mousedown', function () {
-    isDragging = true;
-    cell.classList.add('cell');
-  });
 
-  cell.addEventListener('mousemove', function () {
-    if (isDragging) {
+    cell.addEventListener('mousedown', function () {
+      isDragging = true;
       cell.classList.add('cell');
-    }
-  });
+    });
+    cell.addEventListener('mousemove', function () {
+      if (isDragging) {
+        cell.classList.add('cell');
+      }
+    });
 
-  cell.addEventListener('mouseup', function () {
-    isDragging = false;
-  });
+    cell.addEventListener('mouseup', function () {
+      isDragging = false;
+    });
+  }
 }
