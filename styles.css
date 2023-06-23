@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  background-color: #faf2e1;
 }
 body {
   height: 96vh;
@@ -7,20 +8,40 @@ body {
   justify-content: center;
   align-items: center;
 }
+.mainDiv {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 32px;
+}
+.resetButton {
+  background-color: #a19781; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+}
+.resetButton:hover {
+  background-color: #4caf50; /* Green */
+  color: black;
+}
 .container {
   display: grid;
-  place-content: center;
+  background-color: #d4cdbe;
 }
 
 .grid {
-  border: 0.5px solid #000;
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
 }
 
 .grid:focus {
-  background-color: #3478c6;
+  background-color: #8881a1;
 }
 
 .cell {
-  background-color: #3478c6;
+  background-color: #8881a1;
 }

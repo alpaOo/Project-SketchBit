@@ -1,6 +1,6 @@
 const mainContainer = document.querySelector('.container');
-let gridValue = 0;
-userInput(+prompt(`enter a number: `)); //get user input using propmt then, run function userInput()
+let gridValue = 16;
+/* userInput(+prompt(`enter a number: `)); */ //get user input using propmt then, run function userInput()
 
 let isDragging = false; //determines whether mouse(any button) is clicked
 
