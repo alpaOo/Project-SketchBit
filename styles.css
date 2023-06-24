@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+
 html {
   box-sizing: border-box;
   background-color: #faf2e1;
@@ -14,14 +16,18 @@ body {
   align-items: center;
   gap: 32px;
 }
+.mainText {
+  margin: 0;
+  font: 5em sans-serif;
+  font-family: 'Inter', sans-serif;
+}
 .resetButton {
   background-color: #a19781; /* Green */
   border: none;
+  padding: 8px 16px;
   color: white;
-  padding: 16px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   transition-duration: 0.5s;
 }
@@ -35,10 +41,11 @@ body {
 }
 
 .grid {
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
+  /* border: 0.5px solid; */
 }
 
-.grid:focus {
+.grid:active {
   background-color: #8881a1;
 }
 

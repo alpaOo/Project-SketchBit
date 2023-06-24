@@ -1,36 +1,62 @@
 const mainContainer = document.querySelector('.container');
-let gridValue = 16;
-/* userInput(+prompt(`enter a number: `)); */ //get user input using propmt then, run function userInput()
+const mainDiv = document.querySelector('.mainDiv');
+let mainText = document.querySelector('.mainText');
 
+let gridValue = 0;
 let isDragging = false; //determines whether mouse(any button) is clicked
 
-mainContainer.style.gridTemplateColumns = `repeat(${gridValue}, calc(512px / ${gridValue}))`; // set grid parameters using user input
-mainContainer.style.gridTemplateRows = `repeat(${gridValue}, calc(512px / ${gridValue}))`; // set grid parameters using user input
+enterNewValue();
+function enterNewValue() {
+  gridInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const newGridValue = +gridInput.value;
 
-for (let i = 0; i < gridValue; i++) {
-  for (let j = 0; j < gridValue; j++) {
-    const cell = document.createElement('div');
-    cell.classList.add('grid');
-    mainContainer.append(cell);
+      clearGrid();
+      newGrid(newGridValue);
+      gridInput.value = '';
+    }
+  });
+}
 
-    cell.addEventListener('mousedown', function () {
-      isDragging = true;
-      cell.classList.add('cell');
-    });
-    cell.addEventListener('mousemove', function () {
-      if (isDragging) {
-        cell.classList.add('cell');
-      }
-    });
+function clearGrid() {
+  while (mainContainer.firstChild) {
+    mainContainer.removeChild(mainContainer.firstChild);
+  }
+  mainText.textContent = null;
 
-    cell.addEventListener('mouseup', function () {
-      isDragging = false;
-    });
+  mainContainer.style.gridTemplateColumns = null;
+  mainContainer.style.gridTemplateRows = null;
+}
+
+function newGrid(gridValue) {
+  mainText.textContent = `${gridValue} x ${gridValue}`;
+  mainText.classList.add('mainText');
+
+  mainContainer.style.gridTemplateColumns = `repeat(${gridValue}, calc(512px / ${gridValue}))`;
+  mainContainer.style.gridTemplateRows = `repeat(${gridValue}, calc(512px / ${gridValue}))`;
+
+  for (let i = 0; i < gridValue; i++) {
+    for (let j = 0; j < gridValue; j++) {
+      const cell = document.createElement('div');
+      cell.classList.add('grid');
+      mainContainer.append(cell);
+      mouseEvents(cell);
+    }
   }
 }
 
-function userInput(value) {
-  if (value > 64) return alert('STOP');
+function mouseEvents(value) {
+  value.addEventListener('mousedown', function () {
+    isDragging = true;
+    value.classList.add('cell');
+  });
+  value.addEventListener('mousemove', function () {
+    if (isDragging) {
+      value.classList.add('cell');
+    }
+  });
 
-  gridValue = value;
+  value.addEventListener('mouseup', function () {
+    isDragging = false;
+  });
 }
