@@ -1,5 +1,7 @@
 const mainContainer = document.querySelector('.container');
+const resetButton = document.querySelector('.resetButton');
 const mainDiv = document.querySelector('.mainDiv');
+const gridInput = document.querySelector('#gridInput');
 let mainText = document.querySelector('.mainText');
 
 let gridValue = 0;
@@ -10,10 +12,13 @@ function enterNewValue() {
   gridInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       const newGridValue = +gridInput.value;
-
-      clearGrid();
-      newGrid(newGridValue);
-      gridInput.value = '';
+      if (newGridValue < 100) {
+        clearGrid();
+        newGrid(newGridValue);
+        gridInput.value = '';
+      } else {
+        mainText.textContent = '< 100';
+      }
     }
   });
 }
@@ -60,3 +65,8 @@ function mouseEvents(value) {
     isDragging = false;
   });
 }
+
+resetButton.addEventListener('click', () => {
+  clearGrid();
+  gridInput.focus();
+});

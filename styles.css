@@ -2,7 +2,7 @@
 
 html {
   box-sizing: border-box;
-  background-color: #faf2e1;
+  background-color: #faf8f0;
 }
 body {
   height: 96vh;
@@ -37,15 +37,19 @@ body {
 }
 .container {
   display: grid;
-  background-color: #d4cdbe;
+  background-color: #e0d9cc;
 }
 
 .grid {
-  transition-duration: 0.2s;
-  /* border: 0.5px solid; */
+  transition-duration: 0.4s;
+  border: 0.5px groove;
 }
 
 .grid:active {
+  background-color: #8881a1;
+}
+
+.grid:hover {
   background-color: #8881a1;
 }
 
