@@ -1,58 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
 
-html {
-  box-sizing: border-box;
-  background-color: #faf8f0;
-}
-body {
-  height: 96vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.mainDiv {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  gap: 32px;
-}
-.mainText {
-  margin: 0;
-  font: 5em sans-serif;
-  font-family: 'Inter', sans-serif;
-}
-.resetButton {
-  background-color: #a19781; /* Green */
-  border: none;
-  padding: 8px 16px;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  transition-duration: 0.5s;
-}
-.resetButton:hover {
-  background-color: #4caf50; /* Green */
-  color: black;
-}
-.container {
-  display: grid;
-  background-color: #e0d9cc;
+html
+{
+	box-sizing: border-box;
+	background-color: #faf8f0;
 }
 
-.grid {
-  transition-duration: 0.4s;
-  border: 0.5px groove;
+body
+{
+	height: 96vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.grid:active {
-  background-color: #8881a1;
+.mainDiv
+{
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	gap: 32px;
 }
 
-.grid:hover {
-  background-color: #8881a1;
+.mainText
+{
+	margin: 0;
+	font: 5em sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
-.cell {
-  background-color: #8881a1;
+.resetButton
+{
+	background-color: #a19781;
+	/* Green */
+	border: none;
+	padding: 8px 16px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	transition-duration: 0.5s;
+}
+
+.resetButton:hover
+{
+	background-color: #4caf50;
+	/* Green */
+	color: black;
+}
+
+.container
+{
+	display: grid;
+	background-color: #e0d9cc;
+}
+
+.grid
+{
+	transition-duration: 0.4s;
+	border: 0.5px groove;
+}
+
+.grid:active
+{
+	background-color: #8881a1;
+}
+
+.grid:hover
+{
+	background-color: #8881a1;
+}
+
+.cell
+{
+	background-color: #8881a1;
 }
