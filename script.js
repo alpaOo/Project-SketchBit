@@ -67,7 +67,7 @@ function mouseEvents(value)
     isDragging = true;
     value.classList.add('cell');
   });
-  value.addEventListener('mousemove', function ()
+  value.addEventListener('mousemove', () =>
   {
     if (isDragging)
     {
@@ -75,7 +75,7 @@ function mouseEvents(value)
     }
   });
 
-  value.addEventListener('mouseup', function ()
+  value.addEventListener('mouseup', () =>
   {
     isDragging = false;
   });
