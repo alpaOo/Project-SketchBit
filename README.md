@@ -2,4 +2,4 @@
 
 A basic 8-bit sketch pad.
 
-Live Preview: https://alpaoo.github.io/sketchBit/
+Live Preview: alpaoo.github.io/Project-SketchBit/
